@@ -7,13 +7,13 @@
 			$PHONE = $_POST["phone"];
 			$MESSAGE = $_POST["message"];
 
-			$quebra_linha = "\n"; // Se for Windows
+			$quebra_linha = "\n"; 
 
 			// Passando os dados obtidos pelo formulário para as variáveis abaixo
 
 			$emailsender="contato@nextplace.com.br";
 			$emaildestinatario = trim($_POST['email']);
-			$assunto = "Contato pelo Site de $NOME";
+			$assunto = "Contato pelo Site de $NAME";
 			$assunto = '=?UTF-8?B?'.base64_encode($assunto).'?=';
 
 
@@ -41,7 +41,7 @@
 			 $envio = mail($emailsender, "$assunto", $mensagemHTML, $headers, "-f$emailsender");
 
 			 if($envio)
-				echo "<script language='javascript'>alert('Contato efetuado com sucesso. Em breve a Home Gesso entrará em contato.');</script>";
+				echo "<script language='javascript'>alert('Contato efetuado com sucesso. Em breve a NextPlace entrará em contato.');</script>";
 			else
 				echo "<script language='javascript'>alert('Falha, tente novamente mais tarde.');</script>";
 
